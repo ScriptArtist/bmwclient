@@ -1,5 +1,5 @@
 import * as searchService from 'src/services/searchService';
-import { SET_TERMS, SET_BRANDS, SET_STYLES, ON_INITIALIZATION_SUCCESS } from './actionTypes';
+import { SET_TERMS, SET_BRANDS, SET_STYLES } from './actionTypes';
 
 export const loadTerms = async dispatch => {
   const terms = await searchService.getTerms();
@@ -29,6 +29,5 @@ export const loadDetails = initialSearchParams => async dispatch => {
   await loadTerms(dispatch);
   await loadBrands(dispatch);
   await loadStyles(dispatch);
-  dispatch({ type: ON_INITIALIZATION_SUCCESS });
 };
 
