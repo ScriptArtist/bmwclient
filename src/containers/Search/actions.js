@@ -17,7 +17,6 @@ export const loadStyles = async dispatch => {
 };
 
 export const parseSearch = async (dispatch, initialSearchParams) => {
-  console.log('fff', initialSearchParams);
   const search = await searchService.parseSearch(initialSearchParams);
   if (search.service.id) dispatch({ type: SET_TERMS, payload: [search.service] });
   if (search.brand.id) dispatch({ type: SET_BRANDS, payload: [search.brand] });
